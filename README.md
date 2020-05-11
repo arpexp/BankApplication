@@ -1,4 +1,4 @@
-Please find final code in zip format .
+Please find final code in BankApplication.zip file. The reamining functionalities have been added in this zipped format.
 
 Enum class is used for taking functionality of Saving bank account and Current Bank Account.
 SAVING("SAVING_ACCOUNT"),
