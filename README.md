@@ -1,3 +1,4 @@
+Please find final code in zip format .
 
 Enum class is used for taking functionality of Saving bank account and Current Bank Account.
 SAVING("SAVING_ACCOUNT"),
@@ -7,9 +8,23 @@ CURRENT("CURRENT_ACCOUNT");
 **There are following API's:**
 
 HeadOfficeController
+
+API: creating Headbank branch :
+http://localhost:8080/bank/headoffice
+
 API: creating bank branch :
-(HeadBranch is created by hardcode just for illustration)
-http://localhost:8080/bank/office
+
+API:http://localhost:8080/bank/office
+
+API:http://localhost:8080/bank/getbranch/{id}
+
+API:http://localhost:8080/bank/getallbranch
+
+=============================================================================================
+
+CustomerController:
+
+API:http://localhost:8080/customer/createcustomer
 
 =============================================================================================
 
@@ -21,7 +36,13 @@ http://localhost:8080/customer/createcustomer
 API: WithDraw Amount from account
 http://localhost:8080/bankaccount/withdraw
 
-Similarly we can create deposit api as well with little modification.
+API: Deposit Amount in account- same as withdraw with replacing amount+current_balance.
+
+API: TransactionList from account:
+
+http://localhost:8080/bankaccount/getTransaction/{accountNumber}
+
+APi: http://localhost:8080/bankaccount/getminiTransaction/{accountNumber}
 
 
 
@@ -33,14 +54,16 @@ http://localhost:8080/branch/createaccount
 API: Getting customer by PanNumber
 http://localhost:8080/branch/getCustomerbyPan
 
+API:http://localhost:8080/branch/getCustomerAccountNumber
+
 =========================================================================================
 
 
-Transaction is getting saved in transaction entity and ministatement functionality can be achieved
-by writing modifying query as which is used in Transaction repo :
- @Query(value = "Select * from transaction limit 10 WHERE accountNumber = :accountNumber order by id desc", nativeQuery = true)
+MYSQL DB is used for DB operations.
+
+
  
- Currently the project is in working state(75%) and few functionalities are yet to be completed .
+ 
 
 
 
